@@ -1,0 +1,45 @@
+import java.util.*;
+public class tebak_gambar {
+  public static void main (String [] yanuar){
+  Scanner masukan=new Scanner (System.in);
+
+  int gambar=0;
+  int angka=0;
+  
+  System.out.print ("masukan jumlah lemparan  :");
+  
+  int lemparan=masukan.nextInt();
+  System.out.println ("pilih prediksi anda : gambar / angka ");
+  
+  String prediksi=masukan.next();
+  System.out.println("No."+"\t|  HASIL LEMPARAN");
+  System.out.println("--------------------------");
+
+  for (int i=1;i<=lemparan;i++){
+  int bilRandom=(int)(Math.random()+0.5);
+
+  if (bilRandom>=1){
+    System.out.println(i+"\t|\t Gambar");
+    gambar+=1;
+  }
+  else{
+    System.out.println(i+"\t|\t Angka");
+    angka+=1;
+  }
+  }
+ System.out.println("--------------------------");
+ System.out.println("SKOR GAMBAR :"+gambar);    
+ System.out.println("SKOR ANGKA  :"+angka);
+ 
+ if (angka==gambar){
+    System.out.println("SERI"); 
+  }
+  else{
+    if (angka<gambar){
+    System.out.println("GAMBAR MENANG");
+    }
+    else{
+    System.out.println("ANGKA MENANG");}
+  }
+  }
+}
